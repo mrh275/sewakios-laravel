@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('no_hp');
             $table->string('gedung');
             $table->integer('harga_sewa');
+            $table->integer('durasi_sewa');
             $table->timestamps();
         });
     }
