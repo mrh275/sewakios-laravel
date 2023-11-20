@@ -7,7 +7,7 @@
                 <span>Have an account?</span>
                 <header>Login</header>
             </div>
-            <form action="./sidebar.php">
+            <form action="{{ url('admin') }}">
 
                 <div class="input-field">
                     <input type="text" class="input" placeholder="Username" required>
