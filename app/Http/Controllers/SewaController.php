@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sewa;
 use Illuminate\Http\Request;
 
 class SewaController extends Controller
@@ -10,9 +11,20 @@ class SewaController extends Controller
     {
         $data = [
             'title' => 'Penyewaan',
-            'isMenuActive' => 'penyewaan'
+            'isMenuActive' => 'penyewaan',
+            'dataSewa' => Sewa::all()
         ];
 
         return view('admin.sewa', $data);
+    }
+
+    public function tambah()
+    {
+        $data = [
+            'title' => 'Tambah Penyewaan',
+            'isMenuActive' => 'penyewaan',
+        ];
+
+        return view('admin.tambah-sewa', $data);
     }
 }
