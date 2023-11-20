@@ -27,6 +27,12 @@
     <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/summernote/summernote-bs4.min.css">
+    @if ($isMenuActive == 'penyewaan')
+        <!-- DataTables -->
+        <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/datatables-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/datatables-responsive/css/responsive.bootstrap4.min.css">
+        <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/datatables-buttons/css/buttons.bootstrap4.min.css">
+    @endif
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -66,8 +72,24 @@
     <script src="{{ url('assets/admin/plugins') }}/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
     <script src="{{ url('assets/admin/plugins') }}/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    @if ($isMenuActive == 'penyewaan')
+        <!-- DataTables  & Plugins -->
+        <script src="{{ url('assets/admin/plugins') }}/datatables/jquery.dataTables.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-responsive/js/dataTables.responsive.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-buttons/js/dataTables.buttons.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/jszip/jszip.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/pdfmake/pdfmake.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/pdfmake/vfs_fonts.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-buttons/js/buttons.html5.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-buttons/js/buttons.print.min.js"></script>
+        <script src="{{ url('assets/admin/plugins') }}/datatables-buttons/js/buttons.colVis.min.js"></script>
+    @endif
     <!-- AdminLTE App -->
     <script src="{{ url('assets/admin') }}/js/adminlte.js"></script>
+    @stack('scripts')
 </body>
 
 </html>
