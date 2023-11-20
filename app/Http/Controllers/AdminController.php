@@ -10,6 +10,7 @@ class AdminController extends Controller
     {
         $data = [
             'title' => 'Admin Page',
+            'isMenuActive' => 'dashboard'
         ];
 
         return view('admin.dashboard', $data);
