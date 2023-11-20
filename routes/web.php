@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SewaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/sewa', [SewaController::class, 'index']);
