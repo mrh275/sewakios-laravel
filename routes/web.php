@@ -19,3 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [LoginController::class, 'index']);
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/sewa', [SewaController::class, 'index']);
+Route::get('/admin/sewa/tambah', [SewaController::class, 'tambah']);
