@@ -23,6 +23,7 @@
                 <div class="row">
                     <div class="col-12">
                         <form action="{{ url('admin/sewa/store') }}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <label for="nama-penyewa">Nama Penyewa</label>
                                 <input type="text" class="form-control" name="nama_penyewa" id="nama-penyewa">
@@ -31,16 +32,14 @@
                                 <label for="no-unit">Unit Ruko</label>
                                 <select name="no_unit" id="no-unit" class="form-control">
                                     <option value="">Pilih :</option>
-                                    <option value="1">Unit 1</option>
-                                    <option value="2">Unit 2</option>
-                                    <option value="3">Unit 3</option>
-                                    <option value="4">Unit 4</option>
-                                    <option value="5">Unit 5</option>
+                                    @foreach ($listRuko as $ruko)
+                                        <option value="{{ $ruko->no_unit }}" id="{{ $ruko->harga_sewa }}">{{ $ruko->no_unit }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="harga-sewa">Harga Sewa</label>
-                                <input type="text" class="form-control" name="harga_sewa" id="harga-sewa">
+                                <input type="text" class="form-control" name="harga_sewa" id="harga-sewa" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="no-hp">No HP Penyewa</label>
@@ -64,3 +63,14 @@
         </section>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $('#no-unit').change(function() {
+            var value = $(this).val();
+            // set the value and make sure the user cannot edit it
+            var name = $("option:selected", this).attr('id');
+            $("#harga-sewa").val(name);
+        });
+    </script>
+@endpush
