@@ -29,20 +29,29 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
+                                            <th>No Kontrak</th>
                                             <th>Nama Penyewa</th>
                                             <th>No Unit Ruko</th>
-                                            <th>Harga Sewa</th>
+                                            <th>Jumlah Bayar</th>
                                             <th>Tanggal Bayar</th>
+                                            <th>Tanggal Tenor</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($dataSewa as $data)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $data->nomor_kontrak }}</td>
                                                 <td>{{ $data->nama_penyewa }}</td>
                                                 <td>{{ $data->no_unit }}</td>
-                                                <td>{{ $data->herga_sewa }}</td>
+                                                <td>{{ $data->jumlah_bayar }}</td>
                                                 <td>{{ $data->tanggal_bayar }}</td>
+                                                <td>{{ $data->tanggal_tempo }}</td>
+                                                <td>
+                                                    <a href="{{ url('admin/sewa/edit') . '/' . $data->nomor_kontrak }}" class="btn btn-warning">Edit</a>
+                                                    <a href="{{ url('admin/sewa/hapus') . '/' . $data->nomor_kontrak }}" class="btn btn-danger">Hapus</a>
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
