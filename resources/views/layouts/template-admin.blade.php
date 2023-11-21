@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/summernote/summernote-bs4.min.css">
-    @if ($isMenuActive == 'penyewaan')
+    @if ($isMenuActive == 'penyewaan' || $isMenuActive == 'ruko')
         <!-- DataTables -->
         <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/datatables-bs4/css/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" href="{{ url('assets/admin/plugins') }}/datatables-responsive/css/responsive.bootstrap4.min.css">
@@ -72,7 +72,7 @@
     <script src="{{ url('assets/admin/plugins') }}/summernote/summernote-bs4.min.js"></script>
     <!-- overlayScrollbars -->
     <script src="{{ url('assets/admin/plugins') }}/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    @if ($isMenuActive == 'penyewaan')
+    @if ($isMenuActive == 'penyewaan' || $isMenuActive == 'ruko')
         <!-- DataTables  & Plugins -->
         <script src="{{ url('assets/admin/plugins') }}/datatables/jquery.dataTables.min.js"></script>
         <script src="{{ url('assets/admin/plugins') }}/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
