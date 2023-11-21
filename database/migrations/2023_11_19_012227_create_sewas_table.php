@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('sewas', function (Blueprint $table) {
             $table->id();
-            $table->integer('no_unit');
+            $table->varchar('nomor_kontrak');
             $table->string('nama_penyewa');
             $table->string('no_hp');
-            $table->integer('harga_sewa');
+            $table->integer('no_unit');
+            $table->integer('jumlah_bayar');
             $table->date('tanggal_bayar');
             $table->date('tanggal_tempo');
-            $table->integer('denda');
             $table->timestamps();
         });
     }
