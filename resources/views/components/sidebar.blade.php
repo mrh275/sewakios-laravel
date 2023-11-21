@@ -39,6 +39,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ url('/admin/ruko') }}" class="nav-link {{ $isMenuActive == 'ruko' ? 'active' : '' }}">
+                        <i class="fa fa-building nav-icon"></i>
+                        <p>
+                            List Ruko
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
